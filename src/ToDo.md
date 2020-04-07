@@ -10,7 +10,11 @@ Generation.java
 
 
 
+# Not completed / incomplete:
 
+Rule.java
+
+rest not listed above
 
 
 # testing that checking that cheking boxes work when displayed

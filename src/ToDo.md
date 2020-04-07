@@ -1,20 +1,23 @@
 # Project 2 - Darren Fisher
 
 
-# Need to edit to make it compile and run:
+# Needs to be tested but should be fine:
 
 CellState.java
 Cell.java
 EvolvedCell.java
 Generation.java
+FixedBoundaryCondition.java
 
-
-
-# Not completed / incomplete:
+# Not completed / incomplete / make sure works:
 
 Rule.java
+CircularBoundaryConditions
 
-rest not listed above
+
+# Done:
+
+BoundaryConditions.java - [x]
 
 
 # testing that checking that cheking boxes work when displayed

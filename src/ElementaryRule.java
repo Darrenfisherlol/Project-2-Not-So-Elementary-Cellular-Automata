@@ -1,3 +1,7 @@
+/**
+ * @Author Darren Fisher
+ * @Version 1.0
+ */
 
 public class ElementaryRule {
 
@@ -5,7 +9,7 @@ public class ElementaryRule {
 
 	public ElementaryRule(int ruleNum){
 		try {
-			if (ruleNum < 0 || ruleNum > 255) {
+			if (ruleNum < 0 || ruleNum > 256) {
 				throw new InvalidRuleNumException();
 			}
 		}
@@ -20,9 +24,12 @@ public class ElementaryRule {
 	}
 
 
-	// ISSUE WITH DIAGRAM bc bc 
+	// neighborhood of a cell as the cell to its left, the cell itself, and the cell to its right. 
 	public Cell[] getNeighborhood(int cellIdx, Generation gen, BoundaryConditions bc) {
-
+		// center, row - . O, 
+		Cell[] neightborhoodCells = new Cell[3];
+		
+		
 
 
 	}
@@ -33,6 +40,15 @@ public class ElementaryRule {
 
 	public String toString(){
 
+		String ruleTableRep = "";
+		
+		
+		
+		
+		
+		
+		
+		return ruleTanleRep;
 	}
 		
 }

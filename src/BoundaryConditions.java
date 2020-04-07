@@ -1,3 +1,7 @@
+/**
+ * @Author Darren Fisher
+ * @Version 1.0
+ */
 
 public interface BoundaryConditions {
 
@@ -10,4 +14,6 @@ public interface BoundaryConditions {
 	 * @return the Cell with index cellIdx + offset
 	 */
 	Cell getNeighbor(int cellIdx, int offset, Generation gen);
+	
+	
 }

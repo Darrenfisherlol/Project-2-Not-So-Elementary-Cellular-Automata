@@ -1,3 +1,8 @@
+/**
+ * @Author Darren Fisher
+ * @Version 1.0
+ */
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -6,11 +11,7 @@ public enum CellState {
 	 OFF('.'),
 	 ON('O');
 
-
-
     private char symbol;
-
-
     
     // MAKE SURE HashMap is good
     private static Map<Character, CellState> SYMBOL_TO_STATE = new HashMap<>();
@@ -25,7 +26,7 @@ public enum CellState {
     }
 
 
-    // what else??
+    // 
     private CellState(char symbol){
         this.symbol = symbol;
         

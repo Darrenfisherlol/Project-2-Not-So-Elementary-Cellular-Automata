@@ -1,25 +1,28 @@
+/**
+ * @Author Darren Fisher
+ * @Version 1.0
+ */
 
 public class Cell {
 
-private CellState state;
+    private CellState state;
 
-public Cell(){
+    // DEFAULT TO OFF
+    public Cell(){
+    	
+    }
 
-}
+    public Cell(CellState state){
+        this.state = state;
+    }
 
-public Cell(CellState state){
-    this.state = state;
-}
+    public CellState getState(){
+        return state;
+    }
 
-public CellState getState(){
-    return state;
-}
-
-public String toString(){
-    
-}
-
-
-
-
+    // CHECK TO MAKE SURE RETURN THE RIGHT THING
+    public String toString(){
+        String cellStateStringFormat = getState().toString();
+        return cellStateStringFormat;
+    }
 }

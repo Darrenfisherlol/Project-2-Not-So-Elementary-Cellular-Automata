@@ -1,16 +1,12 @@
 # Project 2 - Darren Fisher
 
-## Have not filled the code in:
-
-
-
-
-
 
 # Need to edit to make it compile and run:
 
-CellState.Java -[]
-
+CellState.java
+Cell.java
+EvolvedCell.java
+Generation.java
 
 
 

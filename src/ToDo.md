@@ -1,19 +1,24 @@
 # Project 2 - Darren Fisher
 
+## Not completed:
 
-## Needs to be tested but should be fine:
+* Automaton.java
+* AutomatonMeasurments.java
+* Rule.java
+
+## Need to test:
+
+* CircularBoundaryConditions
+* TotalisticRule.java
+* ElementaryRule.java
+
+## Should be fine:
 
 * CellState.java
 * Cell.java
 * EvolvedCell.java
 * Generation.java
 * FixedBoundaryCondition.java
-
-## Not completed / incomplete / make sure works:
-
-* Rule.java
-* CircularBoundaryConditions
-
 
 ## Done:
 

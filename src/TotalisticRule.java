@@ -1,7 +1,6 @@
 
 public class TotalisticRule extends Rule {
 
-	private int ruleNum;
 	private int subRules;
 
 	public TotalisticRule(int ruleNum){
@@ -13,7 +12,6 @@ public class TotalisticRule extends Rule {
 		catch (InvalidRuleNumException exception) {
 			System.out.println("TotalisticRule: invalid ruleNum: " + ruleNum);
 		}
-		this.ruleNum = ruleNum;
 	}
 
 	public int getNumSubrules(){

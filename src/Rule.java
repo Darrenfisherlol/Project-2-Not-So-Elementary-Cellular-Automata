@@ -16,14 +16,20 @@ abstract class Rule {
 	}
 
 	public Generation evolve(Generation gen, BoundaryConditions bc){
-		// apply the rule to a given Generation, subject to
-		//the given boundary conditions,
-		//to calculate the next Generation. 
-		//(Hint: Use the abstract methods described above.)
 		
+		Cell[] cellArrayNeighborhood = new Cell[gen.size()];
+		EvolvedCell nexGenNeighborhood;
+		Cell[] cellnextGenNeighborhood = new Cell[gen.size()];
 		
+		for (int x = 0; x < gen.size(); x++) {
+			cellArrayNeighborhood = getNeighborhood(x, gen, bc);
+			nexGenNeighborhood = evolve(cellArrayNeighborhood);
+			cellnextGenNeighborhood[x] = nexGenNeighborhood;
+		}
 		
+		Generation nextGenCell = new Generation(cellnextGenNeighborhood);
 		
+		return nextGenCell;
 	}
 	
 	abstract int getNumSubrules();

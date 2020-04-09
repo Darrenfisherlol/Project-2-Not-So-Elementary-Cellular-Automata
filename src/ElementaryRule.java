@@ -5,7 +5,6 @@
 
 public class ElementaryRule extends Rule{
 
-	private int ruleNum;
 	private int subRuleNum;
 
 	public ElementaryRule(int ruleNum){
@@ -18,7 +17,6 @@ public class ElementaryRule extends Rule{
 		catch(InvalidRuleNumException exception) {
 			System.out.println("Elementary Rule: invalid rule number: " + ruleNum);
 		}
-		this.ruleNum = ruleNum;
 	}
 
 	public int getNumSubrules(){

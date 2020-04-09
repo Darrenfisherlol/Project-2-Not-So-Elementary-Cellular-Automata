@@ -4,7 +4,6 @@
 
 * Automaton.java
 * AutomatonMeasurments.java
-* Rule.java
 
 ## Need to test:
 
@@ -19,6 +18,8 @@
 * EvolvedCell.java
 * Generation.java
 * FixedBoundaryCondition.java
+* Rule.java
+
 
 ## Done:
 

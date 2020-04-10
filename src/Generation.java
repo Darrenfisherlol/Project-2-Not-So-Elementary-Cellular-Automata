@@ -5,38 +5,37 @@
 
 public class Generation {
 
-    
     private Cell[] cells;
-
 
     public Generation(CellState[] states){
         Cell[] cellsCopy = new Cell[states.length];
-        
         for (int x = 0; x < states.length; x++) {
-        	
         	cellsCopy[x] = new Cell(states[x]);
-        	
         }
         this.cells = cellsCopy;
     }
-
-    public Generation(String states){
-    	try {
-    		for(int x = 0; x < states.length(); x++) {
-    			if (states.charAt(x) != '.' || states.charAt(x) != 'O') {
-    				throw new IllegalArgumentException();
-    			}
+    
+    public Generation(String states) throws IllegalArgumentException {
+    	for(int x = 0; x < states.length(); x++) {
+    		if (!(CellState.getState(states.charAt(x)).equals(CellState.OFF)) && (!(CellState.getState(states.charAt(x)).equals(CellState.ON)))) {
+    			throw new IllegalArgumentException();
     		}
     	}
-    	catch (IllegalArgumentException exception) {
-    		System.out.println("Generation: String state is not a symbol");
+    	
+    	Cell[] cellPass = new Cell[states.length()];
+    	for(int x = 0; x < cellPass.length; x++) {
+    		cellPass[x] = new Cell(CellState.getState(states.charAt(x)));
+    		
+    	}
+    	
+    	for(int y = 0; y < cellPass.length; y++) {
+    		cells[y] = cellPass[y];
     	}
     }
-
+    
     public Generation(Cell[] cells){
     	Cell[] cellsCopyImmutable = cells;
     	this.cells = cellsCopyImmutable;
-    	
     }
 
     public int size(){
@@ -52,7 +51,7 @@ public class Generation {
     	String representationOfGen = "";
 
     	for (int x = 0; x < cells.length; x++) {
-    		representationOfGen = representationOfGen + cells[x];
+    		representationOfGen = representationOfGen + cells[x].toString();
     	}
         return representationOfGen;
     }

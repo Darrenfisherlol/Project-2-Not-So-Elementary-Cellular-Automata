@@ -9,7 +9,7 @@ public class Cell {
 
     // DEFAULT TO OFF
     public Cell(){
-    	state = CellState.OFF;
+    	this.state = CellState.OFF;
     }
 
     public Cell(CellState state){
@@ -17,7 +17,7 @@ public class Cell {
     }
 
     public CellState getState(){
-        return state;
+        return this.state;
     }
 
     // CHECK TO MAKE SURE RETURN THE RIGHT THING

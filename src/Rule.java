@@ -32,16 +32,12 @@ abstract class Rule {
 		return nextGenCell;
 	}
 	
-	abstract int getNumSubrules();
+	public abstract int getNumSubrules();
 
-	abstract Cell[] getNeighborhood(int cellIdx, Generation gen, BoundaryConditions bc);
+	public abstract Cell[] getNeighborhood(int cellIdx, Generation gen, BoundaryConditions bc);
 	
-	abstract EvolvedCell evolve(Cell[] neighborhood);		
+	public abstract EvolvedCell evolve(Cell[] neighborhood);		
 	
-	public String toString(){
-		//Return a string representation of the rule.
-		String ruleString = Integer.toString(getRuleNum());
-		return ruleString;
-	}
+	public abstract String toString();
 
 }

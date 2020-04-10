@@ -13,6 +13,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\darre\Desktop\Project2\project-2-Darrenfisherlol\src\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1aFJ99wfb7F0IeUYwzlISojt3IK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -21,6 +28,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../p2TEST" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,9 +44,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586325258107">
+    <state x="981" y="281" key="FileChooserDialogImpl" timestamp="1586488087149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586325258107" />
+    <state x="981" y="281" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586488087149" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586488052051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586488052051" />
   </component>
 </project>

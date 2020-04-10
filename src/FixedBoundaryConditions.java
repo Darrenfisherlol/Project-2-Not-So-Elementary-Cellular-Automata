@@ -12,24 +12,25 @@ public class FixedBoundaryConditions implements BoundaryConditions {
 	public FixedBoundaryConditions(CellState left, CellState right){
 		this.left = left;
 		this.right = right;
-
 	}
 
 	public CellState getLeftState(){
 		return left;
 	}
 
-	public CellState getRighState(){
+	public CellState getRightState(){
 		return right;
 	}
 
 	public Cell getNeighbor(int cellIdx, int offset, Generation gen){
 		
-		if (cellIdx + offset >= gen.size()) {
-			return gen.getCell(gen.size() - 1);
+		if ((cellIdx + offset) > gen.size() - 1) {
+			Cell cellRight = new Cell(getRightState());
+			return cellRight;
 		}
 		else {
-			return gen.getCell(0);
+			Cell cellLeft = new Cell(getLeftState());
+			return cellLeft;
 		}
 	}
 

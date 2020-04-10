@@ -40,8 +40,13 @@ public class Automaton {
 	 * getGeneration() is supposed to return the Generation at a certain index
 	 * @param step, this represents the generation index we want to get 
 	 * @return Generation object, this is a certain generation that has been evolved a certain amount of times
+	 * @throws InvalidStepNumException 
 	 */
-	public Generation getGeneration(int step){
+	public Generation getGeneration(int step) throws InvalidStepNumException{
+		
+		if (step < 0) {
+			throw new InvalidStepNumException();
+		}
 		
 		if (generation.get(step) == null) {
 			int needToEvolve = generation.size() - step;

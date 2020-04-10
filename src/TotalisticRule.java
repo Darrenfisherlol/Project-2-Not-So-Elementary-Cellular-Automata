@@ -3,15 +3,12 @@ public class TotalisticRule extends Rule {
 
 	private int subRules;
 
-	public TotalisticRule(int ruleNum){
+	public TotalisticRule(int ruleNum) throws InvalidRuleNumException{
 		super(ruleNum);
-		try {
+		
 			if (ruleNum < 0 || ruleNum > 64)
 			throw new InvalidRuleNumException();
-		}
-		catch (InvalidRuleNumException exception) {
-			System.out.println("TotalisticRule: invalid ruleNum: " + ruleNum);
-		}
+		
 	}
 
 	public int getNumSubrules(){

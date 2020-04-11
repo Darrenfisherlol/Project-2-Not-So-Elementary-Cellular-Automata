@@ -2,28 +2,26 @@
 
 ## Not completed:
 
-* Automaton.java
 * AutomatonMeasurments.java
 
 ## Need to test:
 
-* CircularBoundaryConditions
-* TotalisticRule.java
-* ElementaryRule.java
-
-## Should be fine:
-
-* CellState.java
-* Cell.java
-* EvolvedCell.java
-* Generation.java
-* FixedBoundaryCondition.java
-* Rule.java
+* Automaton.java
+* CircularBoundaryConditions -wrong return 
+* TotalisticRule.java - ivalid #
+* ElementaryRule.java -toString
+* Generation.java -nullpointer
+* BoundaryConditions.java - Cell annot cast evolved cell
 
 
 ## Done:
 
-* BoundaryConditions.java
+* Cell.java
+* CellState.java
+* EvolvedCell.java
+* FixedBoundaryCondition.java
+* Rule.java
+
 
 
 ## testing that checking that cheking boxes work when displayed

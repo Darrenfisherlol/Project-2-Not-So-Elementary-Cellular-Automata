@@ -17,13 +17,15 @@ abstract class Rule {
 
 	public Generation evolve(Generation gen, BoundaryConditions bc){
 		
-		Cell[] cellArrayNeighborhood = new Cell[gen.size()];
+		Cell[] ArrayNeighborhood = new Cell[gen.size()];
 		EvolvedCell nexGenNeighborhood;
 		Cell[] cellnextGenNeighborhood = new Cell[gen.size()];
 		
 		for (int x = 0; x < gen.size(); x++) {
-			cellArrayNeighborhood = getNeighborhood(x, gen, bc);
-			nexGenNeighborhood = evolve(cellArrayNeighborhood);
+			ArrayNeighborhood = getNeighborhood(x, gen, bc);
+			
+			nexGenNeighborhood = evolve(ArrayNeighborhood);
+			
 			cellnextGenNeighborhood[x] = nexGenNeighborhood;
 		}
 		

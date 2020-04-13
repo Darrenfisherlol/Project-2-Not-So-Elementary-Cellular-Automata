@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * @author Darren Fisher
  * for test
@@ -25,15 +27,22 @@ public class Test {
 		state1[13] = new Cell(CellState.OFF);
 		state1[14] = new Cell(CellState.OFF);
 
-		Rule rule1 = new ElementaryRule(22);
+		Rule rule1 = new ElementaryRule(30);
 		Generation gen1 = new Generation(state1);
 		BoundaryConditions bf = new FixedBoundaryConditions(CellState.OFF, CellState.OFF);
 		Automaton au1 = new Automaton(rule1 ,gen1, bf);
 		System.out.println("Gen 1:" + gen1);
 		System.out.println("init auto: " + au1);
 		au1.evolve(7);
-		System.out.println(au1.getHistory());
+//		System.out.println(au1.getHistory());
 		
+		
+		System.out.println(Arrays.deepToString(rule1.getNeighborhood(2, gen1, bf)));
+		rule1.toString();
+		
+		Rule rule2 = new ElementaryRule(22);
+		rule2.toString();
+		//rule2.toString();
 //		CellState[] state2 = {CellState.OFF, CellState.OFF, CellState.OFF, CellState.ON, CellState.OFF, CellState.OFF, CellState.OFF};
 //		Generation gen2 = new Generation(state2);
 //		System.out.println(gen2);

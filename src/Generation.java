@@ -8,11 +8,10 @@ public class Generation {
     private Cell[] cells;
 
     public Generation(CellState[] states){
-        Cell[] cellsCopy = new Cell[states.length];
+    	this.cells = new Cell[states.length];
         for (int x = 0; x < states.length; x++) {
-        	cellsCopy[x] = new Cell(states[x]);
+        	this.cells[x] = new Cell(states[x]);
         }
-        this.cells = cellsCopy;
     }
     
     public Generation(String states) throws IllegalArgumentException {
@@ -22,20 +21,18 @@ public class Generation {
     		}
     	}
     	
-    	Cell[] cellPass = new Cell[states.length()];
-    	for(int x = 0; x < cellPass.length; x++) {
-    		cellPass[x] = new Cell(CellState.getState(states.charAt(x)));
-    		
-    	}
-    	
-    	for(int y = 0; y < cellPass.length; y++) {
-    		cells[y] = cellPass[y];
+    	this.cells = new Cell[states.length()];
+    	for(int x = 0; x < cells.length; x++) {
+    		this.cells[x] = new Cell(CellState.getState(states.charAt(x)));	
     	}
     }
     
     public Generation(Cell[] cells){
-    	Cell[] cellsCopyImmutable = cells;
-    	this.cells = cellsCopyImmutable;
+    	this.cells = new Cell[cells.length];
+    	
+    	for(int x = 0; x < cells.length; x++) {
+    		this.cells[x] = cells[x];
+    	}
     }
 
     public int size(){
@@ -46,13 +43,14 @@ public class Generation {
         return cells[idx];
     }
 
-    // TEST THIS
+    // 
     public String toString(){
     	String representationOfGen = "";
 
     	for (int x = 0; x < cells.length; x++) {
     		representationOfGen = representationOfGen + cells[x].toString();
     	}
+    	
         return representationOfGen;
     }
 

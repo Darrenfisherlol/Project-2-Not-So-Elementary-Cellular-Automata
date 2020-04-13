@@ -13,15 +13,22 @@ public class CircularBoundaryConditions implements BoundaryConditions {
     
 		int sizeTotal = cellIdx + offset;
 		
-		if ((cellIdx + offset) > gen.size()) {
+		if(sizeTotal > gen.size() - 1) {
 			sizeTotal = sizeTotal % gen.size();
 			return gen.getCell(sizeTotal);
 		}
-		else {
+		else if(sizeTotal < 0) {
+			
 			while (sizeTotal < 0) {
-				sizeTotal = sizeTotal + gen.size();
+				sizeTotal =  sizeTotal + gen.size();
 			}
+			
 			return gen.getCell(sizeTotal);
 		}
+		else {
+			
+			return gen.getCell(sizeTotal);
+		}
+	
 	}
 }

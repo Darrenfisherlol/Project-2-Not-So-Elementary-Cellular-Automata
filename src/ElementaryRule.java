@@ -47,9 +47,7 @@ public class ElementaryRule extends Rule{
 				OffOnReturn = OffOnReturn + ".";
 			}
 		}
-		
-		//System.out.println("aaa" + OffOnReturn);
-		
+				
 		if (neighborhood[0].getState() == CellState.ON && neighborhood[1].getState() == CellState.ON && neighborhood[2].getState() == CellState.ON ) {
 			EvolvedCell	offSeven = new EvolvedCell(CellState.getState(OffOnReturn.charAt(0)), 7);
 			return offSeven;

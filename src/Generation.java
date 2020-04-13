@@ -1,6 +1,8 @@
 /**
  * @Author Darren Fisher
  * @Version 1.0
+ * Worked with TA during office hours, Wilson, Melissa E
+ * Discussed with Barrett Shannon and Megan Khoury
  */
 
 public class Generation {
@@ -22,16 +24,26 @@ public class Generation {
     	}
     	
     	this.cells = new Cell[states.length()];
-    	for(int x = 0; x < cells.length; x++) {
+    	for(int x = 0; x < states.length(); x++) {
     		this.cells[x] = new Cell(CellState.getState(states.charAt(x)));	
     	}
     }
     
     public Generation(Cell[] cells){
+
     	this.cells = new Cell[cells.length];
-    	
+    	// 		(Cell) even if evolved treat it as cell
     	for(int x = 0; x < cells.length; x++) {
-    		this.cells[x] = cells[x];
+    		//this.cells[x] = cells[x];
+    		
+    		if(cells[x] instanceof EvolvedCell) {
+    			EvolvedCell ec = (EvolvedCell) cells[x];
+    			this.cells[x] = new EvolvedCell(ec.getState(), ec.getSubruleNum());
+    		}
+    			
+        	else {
+        		this.cells[x] = new Cell(cells[x].getState());
+        		}
     	}
     }
 
@@ -40,7 +52,9 @@ public class Generation {
     }
 
     public Cell getCell(int idx){
-        return cells[idx];
+    	//Cell cellCopy = new Cell(cells[idx].getState());
+       // return new Cell(cells[idx].getState());
+    	return cells[idx];
     }
 
     // 

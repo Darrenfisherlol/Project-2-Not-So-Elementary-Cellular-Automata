@@ -20,7 +20,6 @@ public class Cell {
         return this.state;
     }
 
-    // CHECK TO MAKE SURE RETURN THE RIGHT THING
     public String toString(){
         String cellStateStringFormat = getState().toString();
         return cellStateStringFormat;

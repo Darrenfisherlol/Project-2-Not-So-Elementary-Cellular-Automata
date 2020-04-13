@@ -1,11 +1,26 @@
 /**
- * @author Darren Fisher
- * @version 1.0
+ * @Author Darren Fisher
+ * @Version 1.0
+ * Worked with TA during office hours, Wilson, Melissa E
  */
 
 public class AutomatonMeasurements {
 
 
+	
+	
+	/*hammingDistance(Generation g1, Generation g2)
+	 * 
+	 * hammingDistance(int stepNum, Automaton a)
+	 * 
+	 * 
+	 */
+	
+	
+	
+	
+	
+	
 	public int hammingDistance(Generation g1, Generation g2){
 		
     	if (g1.size() != g2.size()) {

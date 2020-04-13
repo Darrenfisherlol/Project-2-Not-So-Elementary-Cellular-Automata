@@ -1,6 +1,7 @@
 /**
  * @Author Darren Fisher
  * @Version 1.0
+ * Worked with TA during office hours, Wilson, Melissa E
  */
 
 public class FixedBoundaryConditions implements BoundaryConditions {
@@ -24,13 +25,19 @@ public class FixedBoundaryConditions implements BoundaryConditions {
 
 	public Cell getNeighbor(int cellIdx, int offset, Generation gen){
 		
-		if ((cellIdx + offset) > gen.size() - 1) {
+		int total = cellIdx + offset;
+		
+		if (total > gen.size() - 1) {
 			Cell cellRight = new Cell(getRightState());
 			return cellRight;
 		}
-		else {
+		else if (total < 0) {
 			Cell cellLeft = new Cell(getLeftState());
 			return cellLeft;
+		}
+		else {
+			
+			return gen.getCell(total);
 		}
 	}
 

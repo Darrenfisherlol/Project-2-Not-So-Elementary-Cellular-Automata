@@ -1,6 +1,8 @@
 /**
  * @Author Darren Fisher
  * @Version 1.0
+ * Worked with TA during office hours, Wilson, Melissa E
+ * Discussed with Barrett Shannon and Megan Khoury
  */
 
 abstract class Rule {
@@ -17,14 +19,14 @@ abstract class Rule {
 
 	public Generation evolve(Generation gen, BoundaryConditions bc){
 		
-		Cell[] ArrayNeighborhood = new Cell[gen.size()];
+		//Cell[] ArrayNeighborhood = new Cell[gen.size()];
 		EvolvedCell nexGenNeighborhood;
-		Cell[] cellnextGenNeighborhood = new Cell[gen.size()];
+		EvolvedCell[] cellnextGenNeighborhood = new EvolvedCell[gen.size()];
 		
 		for (int x = 0; x < gen.size(); x++) {
-			ArrayNeighborhood = getNeighborhood(x, gen, bc);
+			//ArrayNeighborhood = getNeighborhood(x, gen, bc);
 			
-			nexGenNeighborhood = evolve(ArrayNeighborhood);
+			nexGenNeighborhood = evolve(getNeighborhood(x, gen, bc));
 			
 			cellnextGenNeighborhood[x] = nexGenNeighborhood;
 		}

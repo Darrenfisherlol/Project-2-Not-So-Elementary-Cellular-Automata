@@ -1,4 +1,8 @@
-
+/**
+ * @Author Darren Fisher
+ * @Version 1.0
+ * Worked with TA during office hours, Wilson, Melissa E
+ */
 public class TotalisticRule extends Rule {
 
 	private final int SUBRULE = 6;

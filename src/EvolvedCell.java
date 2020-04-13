@@ -5,7 +5,6 @@
 
 public class EvolvedCell extends Cell{
 
-// ElementaryRule defines the subruleNum 
     private int subruleNum;
 
     public EvolvedCell(CellState state, int subruleNum){

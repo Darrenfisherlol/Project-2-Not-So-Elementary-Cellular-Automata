@@ -1,6 +1,7 @@
 /**
  * @Author Darren Fisher
  * @Version 1.0
+ * Worked with TA during office hours, Wilson, Melissa E
  */
 
 import java.util.LinkedList;
@@ -32,7 +33,7 @@ public class Automaton {
 	 * @return the rule number
 	 */
 	public Rule getRule(){
-		return rule;
+		return this.rule;
 	}
 
 	
@@ -48,8 +49,11 @@ public class Automaton {
 			throw new InvalidStepNumException();
 		}
 		
-		if (generation.get(step) == null) {
-			int needToEvolve = generation.size() - step;
+		//if (generation.get(step) == null) {
+		if (step > getTotalSteps()) {
+	
+		// test
+			int needToEvolve = step - getTotalSteps();
 			evolve(needToEvolve);
 			return generation.get(step);
 		}
@@ -59,7 +63,7 @@ public class Automaton {
 	}
 
 	public BoundaryConditions getBoundaryConditions(){
-		return bc;
+		return this.bc;
 	}
 
 	/**
@@ -74,16 +78,10 @@ public class Automaton {
 		}
 	}
 	
+	// -1
 	public int getTotalSteps() {
-		return generation.size() - 1; 
+		return this.generation.size() - 1; 
 	}
-	
-	//
-	// MIGHT BE 1 gen behind
-	//
-	//
-	
-	
 	
 	/**
 	 * toString() is supposed to return a String that holds the latest generation
@@ -102,9 +100,14 @@ public class Automaton {
 		String historyOfGen = "";
 		
 		for(int x = 0; x < generation.size(); x++) {
+			if (x == generation.size() - 1) {
+				historyOfGen = historyOfGen + (generation.get(x).toString());
+			
+			}
+			else {
 			historyOfGen = historyOfGen + (generation.get(x).toString()) + "\n";
+			}
 		}
 		return historyOfGen;
 	}
-
 }

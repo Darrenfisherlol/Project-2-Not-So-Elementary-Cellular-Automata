@@ -6,9 +6,7 @@
 
 ## Need to test:
 
-* Automaton.java - nullpointer
-* TotalisticRule.java - invalid #
-* ElementaryRule.java -toString
+* AutomatonMeasurments.java
 * Generation.java -nullpointer
 
 ## Done:
@@ -20,3 +18,6 @@
 * FixedBoundaryCondition.java
 * CircularBoundaryConditions.java
 * Rule.java
+* Automaton.java
+* TotalisticRule.java
+* ElementaryRule.java

@@ -9,18 +9,6 @@ public class AutomatonMeasurements {
 
 	
 	
-	/*hammingDistance(Generation g1, Generation g2)
-	 * 
-	 * hammingDistance(int stepNum, Automaton a)
-	 * 
-	 * 
-	 */
-	
-	
-	
-	
-	
-	
 	public int hammingDistance(Generation g1, Generation g2){
 		
     	if (g1.size() != g2.size()) {

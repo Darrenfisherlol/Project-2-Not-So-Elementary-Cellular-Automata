@@ -7,7 +7,7 @@
 ## Need to test:
 
 * AutomatonMeasurments.java
-* Generation.java -nullpointer
+* Generation.java
 
 ## Done:
 
@@ -21,3 +21,4 @@
 * Automaton.java
 * TotalisticRule.java
 * ElementaryRule.java
+* Generation.java

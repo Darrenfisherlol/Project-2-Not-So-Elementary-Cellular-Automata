@@ -16,9 +16,10 @@ public class Generation {
         }
     }
     
+    //TEST instead of .equals to use == bc Captial does not matter & idk what to do tbh
     public Generation(String states) throws IllegalArgumentException {
     	for(int x = 0; x < states.length(); x++) {
-    		if (!(CellState.getState(states.charAt(x)).equals(CellState.OFF)) && (!(CellState.getState(states.charAt(x)).equals(CellState.ON)))) {
+    		if (!(CellState.getState(states.charAt(x)) == (CellState.OFF)) && (!(CellState.getState(states.charAt(x)) == (CellState.ON)))) {
     			throw new IllegalArgumentException();
     		}
     	}

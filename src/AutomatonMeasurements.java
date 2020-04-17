@@ -2,107 +2,75 @@
  * @Author Darren Fisher
  * @Version 1.0
  * Worked with TA during office hours, Wilson, Melissa E
+ * Discussed with 
  */
 
 public class AutomatonMeasurements {
 
-
-	
-	
-	public int hammingDistance(Generation g1, Generation g2){
+	public static int hammingDistance(Generation g1, Generation g2) throws IllegalArgumentException{
 		
     	if (g1.size() != g2.size()) {
     		throw new IllegalArgumentException();
     	}
     	
     	int distanceHamming = 0;
+    	
     	for (int x = 0; x < g1.size(); x++) {
-    		if(g1.getCell(x) != g2.getCell(x)) {
+    		if(g1.getCell(x).getState() != g2.getCell(x).getState()) {
     			distanceHamming = distanceHamming + 1;
     		}
     	}
 		return distanceHamming;
 	}
 
-	public int hammingDistance(int stepNum, Automaton a){
-		// Calculate the Hamming distance between two successive generations
-		//(i.e., the states of the Automaton immediately before and after the given evolution step)
+	public static int hammingDistance(int stepNum, Automaton a) throws InvalidStepNumException{
+		if (stepNum < 0) {
+			throw new InvalidStepNumException();
+		}
 		
-		int hamDistAll = 0;
-		int preMidDistance = 0;		
-		int midPostDistance = 0;		
-
-//		Generation pre;
-//		Generation mid;
-//		Generation post = a.getGeneration(stepNum + 1);
-//		
-//		if (stepNum - 1 > 0) {
-//			pre = a.getGeneration(stepNum - 1);
-//			mid = a.getGeneration(stepNum);
-//			
-//			for (int x = 0; x < pre.size(); x++) {
-//	    		if(pre.getCell(x) != mid.getCell(x)) {
-//	    			hamDistAll = hamDistAll + 1;
-//	    		}
-//	    	}
-//			
-//			for (int x = 0; x < mid.size(); x++) {
-//	    		if(mid.getCell(x) != post.getCell(x)) {
-//	    			hamDistAll = hamDistAll + 1;
-//	    		}
-//	    	}
-//			return hamDistAll;
-//		}
-//		
-//		if (stepNum > 0) {
-//			mid = a.getGeneration(stepNum);
-//			
-//			for (int x = 0; x < mid.size(); x++) {
-//	    		if(mid.getCell(x) != post.getCell(x)) {
-//	    			hamDistAll = hamDistAll + 1;
-//	    		}
-//	    	}
-//			return hamDistAll;	
-//		}
-//			
-//		
-//		
-//		
-//		
-		return hamDistAll;
+		Generation preGen = a.getGeneration(stepNum - 1);
+		Generation midGen = a.getGeneration(stepNum);
+		
+		int distanceHamming = hammingDistance(preGen, midGen);
+		return distanceHamming;
+	}
+	
+	public static int[] hammingDistances(Automaton a) throws InvalidStepNumException{
+		int[] distanceHammingArray = new int[a.getTotalSteps()];
+    	
+    	// this might contain the errors when running tests
+		for(int x = 0; x < a.getTotalSteps(); x++) {
+			distanceHammingArray[x] = hammingDistance(x + 1, a);
+		}
+		
+		return distanceHammingArray;
 	}
 
-	public int[] hammingDistances(Automaton a){
-		int[] hammingDis = new int[a.getTotalSteps()];
+	public static int[] subruleCount(int stepNum, Automaton a) throws InvalidStepNumException{
 		
+		int[] subruleCount = new int[6];
+		int subRuleNum = 0;
+		Generation stepGen = a.getGeneration(stepNum);
 		
-		
-		
-		
-		
-		return hammingDis;
-	}
-
-	public int[] subruleCount(int stepNum, Automaton a){
-		
-		
-		int[] subruleCount = new int[a.getRule().getNumSubrules()];
-		
-		//Generation genSubRule = a.getGeneration(stepNum);
-		
-		
-		
-		
-		
+		if (stepNum > 0) {
+			
+			for(int x = 0; x < stepGen.size(); x++) {				
+				
+				
+				subruleCount[x] = subRuleNum;
+				subRuleNum = 0;
+			}
+			
+			
+			
+		return subruleCount;
+		}
 		return subruleCount;
 	}
 
-	public int[][] subruleCounts(Automaton a){
+	public static int[][] subruleCounts(Automaton a){
+	
 		int[][] subruleStep = new int[a.getTotalSteps()][a.getTotalSteps()];
-		int step = 0;
-		int subrule = 0;
-		
-		
 		
 		
 		return subruleStep;

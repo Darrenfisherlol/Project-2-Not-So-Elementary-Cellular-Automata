@@ -1,13 +1,8 @@
 # Project 2 - Darren Fisher
 
-## Not completed:
+## Need to finish:
 
-* AutomatonMeasurments.java
-
-## Need to test:
-
-* AutomatonMeasurments.java
-* Generation.java
+* AutomatonMeasurments.java; finished 1/2 and need to compare subruleNumbers
 
 ## Done:
 

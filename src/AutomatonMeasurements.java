@@ -1,3 +1,5 @@
+import java.io.ObjectInputStream.GetField;
+
 /**
  * @Author Darren Fisher
  * @Version 1.0
@@ -47,32 +49,73 @@ public class AutomatonMeasurements {
 	}
 
 	public static int[] subruleCount(int stepNum, Automaton a) throws InvalidStepNumException{
+		/**
+		 *  Count the number of times each subrule is applied during the given evolution step.
+		 *   (The step number must be greater than 0.) The length of the returned array is equal
+		 *    to the number of subrules, and the counts are indexed by subrule number.
+		 *   (Hint: The method getNumSubrules can be called on any Rule to get the number of subrules.)
+		 */
 		
-		int[] subruleCount = new int[6];
-		int subRuleNum = 0;
-		Generation stepGen = a.getGeneration(stepNum);
+		int[] subruleCount = new int[a.getRule().getNumSubrules()];
 		
-		if (stepNum > 0) {
+		Generation stepGen = a.getGeneration(stepNum - 1);
+		
+		for(int x = 0; x < stepGen.size(); x++) {
 			
-			for(int x = 0; x < stepGen.size(); x++) {				
-				
-				
-				subruleCount[x] = subRuleNum;
-				subRuleNum = 0;
-			}
-			
-			
-			
-		return subruleCount;
+			EvolvedCell cellSingle = a.getRule().evolve(a.getRule().getNeighborhood(x, stepGen, a.getBoundaryConditions()));
+			subruleCount[cellSingle.getSubruleNum()] = subruleCount[cellSingle.getSubruleNum()] + 1;
+
 		}
+		System.out.println("Test post for loop: ");
 		return subruleCount;
 	}
 
-	public static int[][] subruleCounts(Automaton a){
+	public static int[][] subruleCounts(Automaton a) throws InvalidStepNumException{
 	
-		int[][] subruleStep = new int[a.getTotalSteps()][a.getTotalSteps()];
+		/**
+		 * Return the subrule counts for every evolution step.
+		 *  The length of the returned array is equal to the total
+		 *   number of steps, and each element is an array of subrule counts.
+		 */
+		
+		int[][] subruleStep = new int[a.getTotalSteps()][a.getRule().getNumSubrules()];
+		
+		int[] subruleCount;
+
+		Generation stepGen = a.getGeneration(0);
+				
+		for(int x = 1; x <= a.getTotalSteps(); x++) {
+			for(int y = 0; y < a.getRule().getNumSubrules();y++) {
+				//System.out.println("POS loop x: " + x );
+				//System.out.println("POS 2 loop y: " + y );
+
+				subruleCount = subruleCount(x ,a);
+				subruleStep[x - 1][y] = subruleCount[y];
+				//System.out.println("AFFt loop x: " + x );
+				//System.out.println("AFFt loop y: " + y );
+
+				
+			}
+			
+		}
 		
 		
 		return subruleStep;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
